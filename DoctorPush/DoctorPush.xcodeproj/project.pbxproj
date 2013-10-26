@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BDE9F6D6181BFBF600CD5DF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6D5181BFBF600CD5DF5 /* Foundation.framework */; };
+		BDE9F6D8181BFBF600CD5DF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6D7181BFBF600CD5DF5 /* CoreGraphics.framework */; };
+		BDE9F6DA181BFBF600CD5DF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6D9181BFBF600CD5DF5 /* UIKit.framework */; };
+		BDE9F6E0181BFBF600CD5DF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BDE9F6DE181BFBF600CD5DF5 /* InfoPlist.strings */; };
+		BDE9F6E2181BFBF600CD5DF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE9F6E1181BFBF600CD5DF5 /* main.m */; };
+		BDE9F6E6181BFBF600CD5DF5 /* RKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE9F6E5181BFBF600CD5DF5 /* RKAppDelegate.m */; };
+		BDE9F6E9181BFBF600CD5DF5 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE9F6E7181BFBF600CD5DF5 /* Main_iPhone.storyboard */; };
+		BDE9F6EC181BFBF600CD5DF5 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE9F6EA181BFBF600CD5DF5 /* Main_iPad.storyboard */; };
+		BDE9F6EF181BFBF600CD5DF5 /* RKFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE9F6EE181BFBF600CD5DF5 /* RKFirstViewController.m */; };
+		BDE9F6F2181BFBF600CD5DF5 /* RKSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE9F6F1181BFBF600CD5DF5 /* RKSecondViewController.m */; };
+		BDE9F6F4181BFBF600CD5DF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDE9F6F3181BFBF600CD5DF5 /* Images.xcassets */; };
+		BDE9F6FB181BFBF600CD5DF5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6FA181BFBF600CD5DF5 /* XCTest.framework */; };
+		BDE9F6FC181BFBF600CD5DF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6D5181BFBF600CD5DF5 /* Foundation.framework */; };
+		BDE9F6FD181BFBF600CD5DF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6D9181BFBF600CD5DF5 /* UIKit.framework */; };
+		BDE9F705181BFBF600CD5DF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BDE9F703181BFBF600CD5DF5 /* InfoPlist.strings */; };
+		BDE9F707181BFBF600CD5DF5 /* DoctorPushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE9F706181BFBF600CD5DF5 /* DoctorPushTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BDE9F6FE181BFBF600CD5DF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDE9F6CA181BFBF600CD5DF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDE9F6D1181BFBF600CD5DF5;
+			remoteInfo = DoctorPush;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BDE9F6D2181BFBF600CD5DF5 /* DoctorPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDE9F6D5181BFBF600CD5DF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BDE9F6D7181BFBF600CD5DF5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BDE9F6D9181BFBF600CD5DF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BDE9F6DD181BFBF600CD5DF5 /* DoctorPush-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DoctorPush-Info.plist"; sourceTree = "<group>"; };
+		BDE9F6DF181BFBF600CD5DF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BDE9F6E1181BFBF600CD5DF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BDE9F6E3181BFBF600CD5DF5 /* DoctorPush-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DoctorPush-Prefix.pch"; sourceTree = "<group>"; };
+		BDE9F6E4181BFBF600CD5DF5 /* RKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKAppDelegate.h; sourceTree = "<group>"; };
+		BDE9F6E5181BFBF600CD5DF5 /* RKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKAppDelegate.m; sourceTree = "<group>"; };
+		BDE9F6E8181BFBF600CD5DF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		BDE9F6EB181BFBF600CD5DF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		BDE9F6ED181BFBF600CD5DF5 /* RKFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKFirstViewController.h; sourceTree = "<group>"; };
+		BDE9F6EE181BFBF600CD5DF5 /* RKFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKFirstViewController.m; sourceTree = "<group>"; };
+		BDE9F6F0181BFBF600CD5DF5 /* RKSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKSecondViewController.h; sourceTree = "<group>"; };
+		BDE9F6F1181BFBF600CD5DF5 /* RKSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKSecondViewController.m; sourceTree = "<group>"; };
+		BDE9F6F3181BFBF600CD5DF5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BDE9F6F9181BFBF600CD5DF5 /* DoctorPushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoctorPushTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDE9F6FA181BFBF600CD5DF5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BDE9F702181BFBF600CD5DF5 /* DoctorPushTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DoctorPushTests-Info.plist"; sourceTree = "<group>"; };
+		BDE9F704181BFBF600CD5DF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BDE9F706181BFBF600CD5DF5 /* DoctorPushTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoctorPushTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BDE9F6CF181BFBF600CD5DF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDE9F6D8181BFBF600CD5DF5 /* CoreGraphics.framework in Frameworks */,
+				BDE9F6DA181BFBF600CD5DF5 /* UIKit.framework in Frameworks */,
+				BDE9F6D6181BFBF600CD5DF5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDE9F6F6181BFBF600CD5DF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDE9F6FB181BFBF600CD5DF5 /* XCTest.framework in Frameworks */,
+				BDE9F6FD181BFBF600CD5DF5 /* UIKit.framework in Frameworks */,
+				BDE9F6FC181BFBF600CD5DF5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BDE9F6C9181BFBF600CD5DF5 = {
+			isa = PBXGroup;
+			children = (
+				BDE9F6DB181BFBF600CD5DF5 /* DoctorPush */,
+				BDE9F700181BFBF600CD5DF5 /* DoctorPushTests */,
+				BDE9F6D4181BFBF600CD5DF5 /* Frameworks */,
+				BDE9F6D3181BFBF600CD5DF5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BDE9F6D3181BFBF600CD5DF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BDE9F6D2181BFBF600CD5DF5 /* DoctorPush.app */,
+				BDE9F6F9181BFBF600CD5DF5 /* DoctorPushTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BDE9F6D4181BFBF600CD5DF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDE9F6D5181BFBF600CD5DF5 /* Foundation.framework */,
+				BDE9F6D7181BFBF600CD5DF5 /* CoreGraphics.framework */,
+				BDE9F6D9181BFBF600CD5DF5 /* UIKit.framework */,
+				BDE9F6FA181BFBF600CD5DF5 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDE9F6DB181BFBF600CD5DF5 /* DoctorPush */ = {
+			isa = PBXGroup;
+			children = (
+				BDE9F6E4181BFBF600CD5DF5 /* RKAppDelegate.h */,
+				BDE9F6E5181BFBF600CD5DF5 /* RKAppDelegate.m */,
+				BDE9F6E7181BFBF600CD5DF5 /* Main_iPhone.storyboard */,
+				BDE9F6EA181BFBF600CD5DF5 /* Main_iPad.storyboard */,
+				BDE9F6ED181BFBF600CD5DF5 /* RKFirstViewController.h */,
+				BDE9F6EE181BFBF600CD5DF5 /* RKFirstViewController.m */,
+				BDE9F6F0181BFBF600CD5DF5 /* RKSecondViewController.h */,
+				BDE9F6F1181BFBF600CD5DF5 /* RKSecondViewController.m */,
+				BDE9F6F3181BFBF600CD5DF5 /* Images.xcassets */,
+				BDE9F6DC181BFBF600CD5DF5 /* Supporting Files */,
+			);
+			path = DoctorPush;
+			sourceTree = "<group>";
+		};
+		BDE9F6DC181BFBF600CD5DF5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BDE9F6DD181BFBF600CD5DF5 /* DoctorPush-Info.plist */,
+				BDE9F6DE181BFBF600CD5DF5 /* InfoPlist.strings */,
+				BDE9F6E1181BFBF600CD5DF5 /* main.m */,
+				BDE9F6E3181BFBF600CD5DF5 /* DoctorPush-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BDE9F700181BFBF600CD5DF5 /* DoctorPushTests */ = {
+			isa = PBXGroup;
+			children = (
+				BDE9F706181BFBF600CD5DF5 /* DoctorPushTests.m */,
+				BDE9F701181BFBF600CD5DF5 /* Supporting Files */,
+			);
+			path = DoctorPushTests;
+			sourceTree = "<group>";
+		};
+		BDE9F701181BFBF600CD5DF5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BDE9F702181BFBF600CD5DF5 /* DoctorPushTests-Info.plist */,
+				BDE9F703181BFBF600CD5DF5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BDE9F6D1181BFBF600CD5DF5 /* DoctorPush */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDE9F70A181BFBF600CD5DF5 /* Build configuration list for PBXNativeTarget "DoctorPush" */;
+			buildPhases = (
+				BDE9F6CE181BFBF600CD5DF5 /* Sources */,
+				BDE9F6CF181BFBF600CD5DF5 /* Frameworks */,
+				BDE9F6D0181BFBF600CD5DF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoctorPush;
+			productName = DoctorPush;
+			productReference = BDE9F6D2181BFBF600CD5DF5 /* DoctorPush.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BDE9F6F8181BFBF600CD5DF5 /* DoctorPushTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDE9F70D181BFBF600CD5DF5 /* Build configuration list for PBXNativeTarget "DoctorPushTests" */;
+			buildPhases = (
+				BDE9F6F5181BFBF600CD5DF5 /* Sources */,
+				BDE9F6F6181BFBF600CD5DF5 /* Frameworks */,
+				BDE9F6F7181BFBF600CD5DF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BDE9F6FF181BFBF600CD5DF5 /* PBXTargetDependency */,
+			);
+			name = DoctorPushTests;
+			productName = DoctorPushTests;
+			productReference = BDE9F6F9181BFBF600CD5DF5 /* DoctorPushTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BDE9F6CA181BFBF600CD5DF5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RK;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "René (Privat)";
+				TargetAttributes = {
+					BDE9F6F8181BFBF600CD5DF5 = {
+						TestTargetID = BDE9F6D1181BFBF600CD5DF5;
+					};
+				};
+			};
+			buildConfigurationList = BDE9F6CD181BFBF600CD5DF5 /* Build configuration list for PBXProject "DoctorPush" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BDE9F6C9181BFBF600CD5DF5;
+			productRefGroup = BDE9F6D3181BFBF600CD5DF5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BDE9F6D1181BFBF600CD5DF5 /* DoctorPush */,
+				BDE9F6F8181BFBF600CD5DF5 /* DoctorPushTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BDE9F6D0181BFBF600CD5DF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDE9F6EC181BFBF600CD5DF5 /* Main_iPad.storyboard in Resources */,
+				BDE9F6F4181BFBF600CD5DF5 /* Images.xcassets in Resources */,
+				BDE9F6E9181BFBF600CD5DF5 /* Main_iPhone.storyboard in Resources */,
+				BDE9F6E0181BFBF600CD5DF5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDE9F6F7181BFBF600CD5DF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDE9F705181BFBF600CD5DF5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BDE9F6CE181BFBF600CD5DF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDE9F6E2181BFBF600CD5DF5 /* main.m in Sources */,
+				BDE9F6EF181BFBF600CD5DF5 /* RKFirstViewController.m in Sources */,
+				BDE9F6E6181BFBF600CD5DF5 /* RKAppDelegate.m in Sources */,
+				BDE9F6F2181BFBF600CD5DF5 /* RKSecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDE9F6F5181BFBF600CD5DF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDE9F707181BFBF600CD5DF5 /* DoctorPushTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BDE9F6FF181BFBF600CD5DF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDE9F6D1181BFBF600CD5DF5 /* DoctorPush */;
+			targetProxy = BDE9F6FE181BFBF600CD5DF5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BDE9F6DE181BFBF600CD5DF5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDE9F6DF181BFBF600CD5DF5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BDE9F6E7181BFBF600CD5DF5 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDE9F6E8181BFBF600CD5DF5 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		BDE9F6EA181BFBF600CD5DF5 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDE9F6EB181BFBF600CD5DF5 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		BDE9F703181BFBF600CD5DF5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDE9F704181BFBF600CD5DF5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BDE9F708181BFBF600CD5DF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BDE9F709181BFBF600CD5DF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BDE9F70B181BFBF600CD5DF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DoctorPush/DoctorPush-Prefix.pch";
+				INFOPLIST_FILE = "DoctorPush/DoctorPush-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BDE9F70C181BFBF600CD5DF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DoctorPush/DoctorPush-Prefix.pch";
+				INFOPLIST_FILE = "DoctorPush/DoctorPush-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BDE9F70E181BFBF600CD5DF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DoctorPush.app/DoctorPush";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DoctorPush/DoctorPush-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DoctorPushTests/DoctorPushTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BDE9F70F181BFBF600CD5DF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DoctorPush.app/DoctorPush";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DoctorPush/DoctorPush-Prefix.pch";
+				INFOPLIST_FILE = "DoctorPushTests/DoctorPushTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BDE9F6CD181BFBF600CD5DF5 /* Build configuration list for PBXProject "DoctorPush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDE9F708181BFBF600CD5DF5 /* Debug */,
+				BDE9F709181BFBF600CD5DF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDE9F70A181BFBF600CD5DF5 /* Build configuration list for PBXNativeTarget "DoctorPush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDE9F70B181BFBF600CD5DF5 /* Debug */,
+				BDE9F70C181BFBF600CD5DF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BDE9F70D181BFBF600CD5DF5 /* Build configuration list for PBXNativeTarget "DoctorPushTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDE9F70E181BFBF600CD5DF5 /* Debug */,
+				BDE9F70F181BFBF600CD5DF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BDE9F6CA181BFBF600CD5DF5 /* Project object */;
+}
