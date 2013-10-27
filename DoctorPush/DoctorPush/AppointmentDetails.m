@@ -192,7 +192,7 @@
     }
     
     if(distance > 0) {
-        self.lblDistance.text = [NSString stringWithFormat:@"%.0f km", distance];
+        self.lblDistance.text = [NSString stringWithFormat:@"%.1f km", (distance/1000)];
     } else {
         self.lblDistance.text = @"";
     }
