@@ -99,7 +99,7 @@
     float minLongitude = MIN(locCurrent.longitude, locApp.longitude);
     float maxLongitude = MAX(locCurrent.longitude, locApp.longitude);
     
-    #define MAP_PADDING 1.5
+    #define MAP_PADDING 2.5
     
     // we'll make sure that our minimum vertical span is about a kilometer
     // there are ~111km to a degree of latitude. regionThatFits will take care of
@@ -107,7 +107,7 @@
     #define MINIMUM_VISIBLE_LATITUDE 0.01
     
     MKCoordinateRegion region;
-    region.center.latitude = (minLatitude + maxLatitude) / 2;
+    region.center.latitude = (minLatitude + maxLatitude + 1) / 2;
     region.center.longitude = (minLongitude + maxLongitude) / 2;
     
     region.span.latitudeDelta = (maxLatitude - minLatitude) * MAP_PADDING;

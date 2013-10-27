@@ -35,6 +35,7 @@
 		BDE75D57181C848900E2E9EF /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE75D56181C848900E2E9EF /* Patient.m */; };
 		BDE75D62181C8A1600E2E9EF /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BDE75D5F181C8A1600E2E9EF /* ProgressHUD.bundle */; };
 		BDE75D63181C8A1600E2E9EF /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE75D61181C8A1600E2E9EF /* ProgressHUD.m */; };
+		BDE75D67181C9C0000E2E9EF /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE75D66181C9C0000E2E9EF /* FXBlurView.m */; };
 		BDE9F6D6181BFBF600CD5DF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6D5181BFBF600CD5DF5 /* Foundation.framework */; };
 		BDE9F6D8181BFBF600CD5DF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6D7181BFBF600CD5DF5 /* CoreGraphics.framework */; };
 		BDE9F6DA181BFBF600CD5DF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6D9181BFBF600CD5DF5 /* UIKit.framework */; };
@@ -135,6 +136,8 @@
 		BDE75D5F181C8A1600E2E9EF /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ProgressHUD.bundle; path = DoctorPush/Libs/ProgressHUD/ProgressHUD/ProgressHUD.bundle; sourceTree = "<group>"; };
 		BDE75D60181C8A1600E2E9EF /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgressHUD.h; path = DoctorPush/Libs/ProgressHUD/ProgressHUD/ProgressHUD.h; sourceTree = "<group>"; };
 		BDE75D61181C8A1600E2E9EF /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgressHUD.m; path = DoctorPush/Libs/ProgressHUD/ProgressHUD/ProgressHUD.m; sourceTree = "<group>"; };
+		BDE75D65181C9C0000E2E9EF /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXBlurView.h; path = DoctorPush/Libs/FXBlurView/FXBlurView/FXBlurView.h; sourceTree = "<group>"; };
+		BDE75D66181C9C0000E2E9EF /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FXBlurView.m; path = DoctorPush/Libs/FXBlurView/FXBlurView/FXBlurView.m; sourceTree = "<group>"; };
 		BDE9F6D2181BFBF600CD5DF5 /* DoctorPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE9F6D5181BFBF600CD5DF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BDE9F6D7181BFBF600CD5DF5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -257,6 +260,8 @@
 		BDE75D64181C9BF000E2E9EF /* FXBlurView */ = {
 			isa = PBXGroup;
 			children = (
+				BDE75D65181C9C0000E2E9EF /* FXBlurView.h */,
+				BDE75D66181C9C0000E2E9EF /* FXBlurView.m */,
 			);
 			name = FXBlurView;
 			sourceTree = "<group>";
@@ -531,6 +536,7 @@
 				BDE9F6E6181BFBF600CD5DF5 /* AppDelegate.m in Sources */,
 				BDE75D34181C5A8600E2E9EF /* AppointmentDetails.m in Sources */,
 				BDE75D46181C60D600E2E9EF /* BSGoogleV3KmlParser.m in Sources */,
+				BDE75D67181C9C0000E2E9EF /* FXBlurView.m in Sources */,
 				BDE75D37181C603500E2E9EF /* UCDLocationManager.m in Sources */,
 				BDE75D44181C60D600E2E9EF /* BSAddressComponent.m in Sources */,
 			);

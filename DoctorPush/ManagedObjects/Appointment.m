@@ -42,6 +42,12 @@
 
 - (void)calcTravelTimeWalking {
     
+    if(self.traveltimeWalking) {
+        if([self.delegate respondsToSelector:@selector(traveltimeWalkingCalculated:)]) {
+            [self.delegate traveltimeWalkingCalculated:self.traveltimeWalking];
+        }
+    }
+    
     MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
     
     MKPlacemark *sourcePlacemark = [[MKPlacemark alloc] initWithCoordinate:self.location addressDictionary:nil];
@@ -68,6 +74,12 @@
 }
 
 - (void)calcTravelTimeCar {
+    
+    if(self.traveltimeCar) {
+        if([self.delegate respondsToSelector:@selector(traveltimeCarCalculated:)]) {
+            [self.delegate traveltimeCarCalculated:self.traveltimeCar];
+        }
+    }
     
     MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
     
