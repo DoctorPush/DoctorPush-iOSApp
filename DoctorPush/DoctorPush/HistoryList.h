@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Appointment.h"
+#import "HistoryTableCell.h"
+#import "HistoryItem.h"
 
 @interface HistoryList : UITableViewController
-
+@property (nonatomic, strong) Appointment *appointment;
 @end

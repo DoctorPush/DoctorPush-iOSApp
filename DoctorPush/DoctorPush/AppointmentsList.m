@@ -21,7 +21,7 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
-    self.title = @"Meine Termine";
+    self.title = @"My Appointments";
     
     self.timerVC = [[TimerVC alloc] initWithNibName:@"TimerVC" bundle:nil];
     [self.timerVC.view setFrame:CGRectMake(0, 66, 320, 175)];
@@ -70,7 +70,7 @@
     [self.appointsTable setHidden:YES];
     [self.timerVC reloadTimer];
     
-    [ProgressHUD show:@"Termine werden geladen..."];
+    [ProgressHUD show:@"Appointments are loading..."];
     [self.user getAllAppointments];
 }
 
@@ -112,10 +112,10 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
     if(section == 0) {
-        return @"Nächster Termin";
+        return @"Next appointment";
     }
     
-    return @"Weitere Termine";
+    return @"Following appointments";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

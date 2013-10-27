@@ -34,7 +34,7 @@
     NSString *beginTime = [formatter stringFromDate:self.begin];
     NSString *endTime = [formatter stringFromDate:self.end];
     
-    self.formatedDate = [NSString stringWithFormat:@"%@ %@ Uhr - %@ Uhr", date, beginTime, endTime];
+    self.formatedDate = [NSString stringWithFormat:@"%@ %@ o'clock - %@ o'clock", date, beginTime, endTime];
     
     return self.formatedDate;
 }

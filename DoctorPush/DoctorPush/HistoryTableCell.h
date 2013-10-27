@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface HistoryTableCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UILabel *lblKindOfUpdate;
+@property (weak, nonatomic) IBOutlet UILabel *lblInfo;
 @end

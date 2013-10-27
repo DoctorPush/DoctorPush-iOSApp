@@ -7,6 +7,7 @@
 //
 
 #import "AppointmentDetails.h"
+#import "HistoryList.h"
 
 @interface AppointmentDetails ()
 
@@ -21,6 +22,12 @@
         // Custom initialization
     }
     return self;
+}
+
+- (IBAction)showHistory:(id)sender {
+    HistoryList *history = [self.storyboard instantiateViewControllerWithIdentifier:@"HistoryList"];
+    [history setAppointment:self.appointment];
+    [self.navigationController pushViewController:history animated:YES];
 }
 
 - (void)viewDidLoad
@@ -45,7 +52,7 @@
         [self.lblAddress setText:self.appointment.medic.address];
         [self.lblDate setText:[self.appointment formatedDateAndTime]];
         
-        self.title = [NSString stringWithFormat:@"Termin bei %@", [self.appointment.medic formatedName]];
+        self.title = [NSString stringWithFormat:@"Appointment with %@", [self.appointment.medic formatedName]];
     }
 }
 
@@ -83,7 +90,7 @@
     if(arr.count > 1) {
         [self.lblCarTime setText:[NSString stringWithFormat:@"%@:%@ min", [arr objectAtIndex:0], [arr objectAtIndex:1]]];
     } else {
-        [self.lblCarTime setText:[NSString stringWithFormat:@"%@ Sek", [arr objectAtIndex:0]]];
+        [self.lblCarTime setText:[NSString stringWithFormat:@"%@ sec", [arr objectAtIndex:0]]];
     }
 }
 
@@ -95,7 +102,7 @@
     if(arr.count > 1) {
         [self.lblWalkingTime setText:[NSString stringWithFormat:@"%@:%@ min", [arr objectAtIndex:0], [arr objectAtIndex:1]]];
     } else {
-        [self.lblWalkingTime setText:[NSString stringWithFormat:@"%@ Sek", [arr objectAtIndex:0]]];
+        [self.lblWalkingTime setText:[NSString stringWithFormat:@"%@ sec", [arr objectAtIndex:0]]];
     }
 }
 

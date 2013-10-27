@@ -43,6 +43,7 @@
 		BDE75D76181CDBFF00E2E9EF /* HistoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE75D75181CDBFF00E2E9EF /* HistoryItem.m */; };
 		BDE75D79181CDDC400E2E9EF /* HistoryParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE75D78181CDDC400E2E9EF /* HistoryParameters.m */; };
 		BDE75D7C181CDFEC00E2E9EF /* HistoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE75D7B181CDFEC00E2E9EF /* HistoryList.m */; };
+		BDE75D7F181CE02B00E2E9EF /* HistoryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE75D7E181CE02B00E2E9EF /* HistoryTableCell.m */; };
 		BDE9F6D6181BFBF600CD5DF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6D5181BFBF600CD5DF5 /* Foundation.framework */; };
 		BDE9F6D8181BFBF600CD5DF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6D7181BFBF600CD5DF5 /* CoreGraphics.framework */; };
 		BDE9F6DA181BFBF600CD5DF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6D9181BFBF600CD5DF5 /* UIKit.framework */; };
@@ -156,6 +157,8 @@
 		BDE75D78181CDDC400E2E9EF /* HistoryParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryParameters.m; sourceTree = "<group>"; };
 		BDE75D7A181CDFEC00E2E9EF /* HistoryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryList.h; sourceTree = "<group>"; };
 		BDE75D7B181CDFEC00E2E9EF /* HistoryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryList.m; sourceTree = "<group>"; };
+		BDE75D7D181CE02B00E2E9EF /* HistoryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableCell.h; sourceTree = "<group>"; };
+		BDE75D7E181CE02B00E2E9EF /* HistoryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableCell.m; sourceTree = "<group>"; };
 		BDE9F6D2181BFBF600CD5DF5 /* DoctorPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE9F6D5181BFBF600CD5DF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BDE9F6D7181BFBF600CD5DF5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -343,6 +346,8 @@
 				BDE75D6D181CB44D00E2E9EF /* TimerVC.xib */,
 				BDE75D7A181CDFEC00E2E9EF /* HistoryList.h */,
 				BDE75D7B181CDFEC00E2E9EF /* HistoryList.m */,
+				BDE75D7D181CE02B00E2E9EF /* HistoryTableCell.h */,
+				BDE75D7E181CE02B00E2E9EF /* HistoryTableCell.m */,
 			);
 			path = DoctorPush;
 			sourceTree = "<group>";
@@ -562,6 +567,7 @@
 				BDE75D6A181CA0C600E2E9EF /* AppointmentSettings.m in Sources */,
 				BD9ABAF9181C2BCC00C712CA /* Helper.m in Sources */,
 				BD9ABAF2181C246C00C712CA /* Appointment.m in Sources */,
+				BDE75D7F181CE02B00E2E9EF /* HistoryTableCell.m in Sources */,
 				BDE75D63181C8A1600E2E9EF /* ProgressHUD.m in Sources */,
 				BD9ABAEF181C246B00C712CA /* User.m in Sources */,
 				BDE75D54181C822C00E2E9EF /* Medic.m in Sources */,

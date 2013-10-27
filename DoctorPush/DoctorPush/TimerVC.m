@@ -40,7 +40,7 @@
         [self.appointment getLocationFromAdress];
         
         if(self.appointment.waiting_persons > 0) {
-            [self.lblPersonsWaiting setText:[NSString stringWithFormat:@"%i Personen warten vor Ihnen", self.appointment.waiting_persons]];
+            [self.lblPersonsWaiting setText:[NSString stringWithFormat:@"%i persons waiting in front of you.", self.appointment.waiting_persons]];
         }
     }
     
@@ -81,10 +81,14 @@
     double timeUntilAppointment = [self.appointment.begin timeIntervalSinceDate:[NSDate date]];
     double timeWithoutTraveltime = timeUntilAppointment - traveltime;
     
-    NSString *timeAsString = [Helper splitSecondsIntoComponents:timeWithoutTraveltime];
-    self.lblTimer.text = timeAsString;
+    if(timeWithoutTraveltime < 0) {
+        self.lblTimer.text = @"00:00";
+    } else {
+        NSString *timeAsString = [Helper splitSecondsIntoComponents:timeWithoutTraveltime];
+        self.lblTimer.text = timeAsString;
+    }
     
-    __block CGRect fr = self.loadingView.frame;
+   __block CGRect fr = self.loadingView.frame;
     
     [UIView animateWithDuration:0.20
                      animations:^{
@@ -120,9 +124,9 @@
     self.selectedIndex = [segmentedControl selectedSegmentIndex];
     
     if(self.selectedIndex == 0) {
-        self.lblDriveOrWalk.text = @"losfahren";
+        //self.lblDriveOrWalk.text = @"losfahren";
     } else {
-        self.lblDriveOrWalk.text = @"losgehen";
+        //self.lblDriveOrWalk.text = @"losgehen";
     }
 }
 
