@@ -176,17 +176,25 @@
 -(void)showRoute:(MKDirectionsResponse *)response
 {
     float traveltime = 0;
+    float distance = 0;
     
     for (MKRoute *route in response.routes)
     {
         [self.mapview addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
         
         traveltime += route.expectedTravelTime;
+        distance += route.distance;
         
         for (MKRouteStep *step in route.steps)
         {
             NSLog(@"%@", step.instructions);
         }
+    }
+    
+    if(distance > 0) {
+        self.lblDistance.text = [NSString stringWithFormat:@"%.0f km", distance];
+    } else {
+        self.lblDistance.text = @"";
     }
     
     [self getPerfectRegion];

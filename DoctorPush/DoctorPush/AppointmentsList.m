@@ -157,7 +157,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Appointment * a = [self.user.appointments objectAtIndex:indexPath.row];
+    int row = 0;
+    
+    if(indexPath.section == 1) {
+        row = indexPath.row + 1;
+    }
+    
+    Appointment * a = [self.user.appointments objectAtIndex:row];
     
     AppointmentDetails *details = [self.storyboard instantiateViewControllerWithIdentifier:@"AppointmentDetails"];
     [details setAppointment:a];

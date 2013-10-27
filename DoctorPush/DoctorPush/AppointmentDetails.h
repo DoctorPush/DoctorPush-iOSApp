@@ -19,6 +19,7 @@
 @property (strong, nonatomic) Appointment *appointment;
 @property (weak, nonatomic) IBOutlet UILabel *lblWalkingTime;
 @property (weak, nonatomic) IBOutlet UILabel *lblCarTime;
+@property (weak, nonatomic) IBOutlet UILabel *lblDistance;
 @property (weak, nonatomic) IBOutlet MKMapView *mapview;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *carSpinner;
