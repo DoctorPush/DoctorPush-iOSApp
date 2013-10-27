@@ -10,4 +10,6 @@
 
 @interface Helper : NSObject
 
++ (NSString *)splitSecondsIntoComponents:(NSTimeInterval)interval;
+
 @end

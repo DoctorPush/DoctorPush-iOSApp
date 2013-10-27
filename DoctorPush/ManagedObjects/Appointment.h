@@ -36,11 +36,13 @@
 @property (nonatomic, strong) NSString *formatedDate;
 @property (nonatomic, strong) UCDLocationManager *locationManager;
 @property (nonatomic, readwrite) CLLocationCoordinate2D location;
-@property (nonatomic, assign) id delegate;
+@property (nonatomic, assign) id delegate, delegateToTimer;
 
 @property (nonatomic, readwrite) NSTimeInterval traveltimeWalking, traveltimeCar;
 
 - (NSString *)formatedDateAndTime;
 - (void)getLocationFromAdress;
+- (void)calcTravelTimeWalking:(BOOL)refresh;
+- (void)calcTravelTimeCar:(BOOL)refresh;
 
 @end

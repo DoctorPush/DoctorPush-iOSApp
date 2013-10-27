@@ -18,8 +18,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = @"Meine Termine";
+    
+    self.timerVC = [[TimerVC alloc] initWithNibName:@"TimerVC" bundle:nil];
+    [self.timerVC.view setFrame:CGRectMake(0, 66, 320, 175)];
+    [self.view addSubview:self.timerVC.view];
+    
     [self initUser];
     [self setupLocationManager];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reload)
+                                                 name:@"RefreshAppointments"
+                                               object:nil];
 }
 
 - (void)setupLocationManager {
@@ -29,24 +41,39 @@
 }
 
 - (void)initUser {
-    
-    [self.appointsTable setHidden:YES];
-    [ProgressHUD show:@"Termine werden geladen..."];
-    
+
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     self.user = appDelegate.user;
     [self.user setDelegate:self];
-    [self.user getAllAppointments];
+   
+    [self reload];
 }
 
 - (void)appointmentsLoaded {
     [ProgressHUD dismiss];
     
+    if(self.user.appointments.count > 0) {
+        Appointment *a = [self.user.appointments objectAtIndex:0];
+        [self.timerVC setAppointment:a];
+        [self.timerVC startTimer];
+    }
+    
     [self.appointsTable setHidden:NO];
     [self.appointsTable reloadData];
-    
 }
+
+- (void)reload {
+    
+    [self.appointsTable setHidden:YES];
+    [self.timerVC reloadTimer];
+    
+    [ProgressHUD show:@"Termine werden geladen..."];
+    [self.user getAllAppointments];
+}
+
+
+#pragma mark TableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

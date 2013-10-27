@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import "AppDelegate.h"
 
 @interface User ()
 @property (nonatomic, readwrite) int appsToLoad, appsLoaded;
@@ -15,7 +16,7 @@
 
 @implementation User
 
-@synthesize apn_id, phonenumber, delegate;
+@synthesize apn_id, phonenumber, delegate, aNewServiceURL;
 
 - (NSMutableArray *)appointments {
     if(!_appointments) _appointments = [[NSMutableArray alloc] init];
@@ -26,6 +27,8 @@
     if(!_service_urls) _service_urls = [[NSMutableArray alloc] init];
     return _service_urls;
 }
+
+#pragma mark Register Apple ID
 
 - (void)registerAPNID {
     //RKObjectManager *manager = [RKObjectManager sharedManager];
@@ -57,25 +60,42 @@
              }];
 }
 
-- (void)addFakeAppointment {
+#pragma mark Appointments
+
+- (void)addFakeAppointmentService {
+    [self addAppointmentWithServiceURL:@"https://rawgithub.com/DoctorPush/doctor/master/appointment_test.json"];
+    [self addAppointmentWithServiceURL:@"https://rawgithub.com/DoctorPush/doctor/master/appointment_test2.json"];
+}
+
+- (void)addAppointmentWithServiceURL:(NSString *)theURL loadAllAfterAdd:(BOOL)loadAllAfterAdd {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    Appointment *a1 = [[Appointment alloc] init];
-    [a1 setBegin:[NSDate dateWithTimeIntervalSinceReferenceDate:1382822200]];
-    [a1 setEnd:[NSDate dateWithTimeIntervalSinceReferenceDate:1382822323]];
-    [a1 setTitle:@"Termin A"];
-    [a1 setService_url:@""];
-    //[a1 setAdress:@"Alexanderstraße 13, 10179 Berlin, Deutschland"];
-    //[a1 setDoctor:@"Dr. Mueller"];
-    [self.appointments addObject:a1];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     
-    Appointment *a2 = [[Appointment alloc] init];
-    [a2 setBegin:[NSDate dateWithTimeIntervalSinceReferenceDate:1382822200]];
-    [a2 setEnd:[NSDate dateWithTimeIntervalSinceReferenceDate:1382822323]];
-    [a2 setTitle:@"Termine B"];
-    [a2 setService_url:@""];
-    //[a2 setAdress:@"Voltastrasse 5, 13355 Berlin, Deutschland"];
-    //[a2 setDoctor:@"Dr. meier"];
-    [self.appointments addObject:a2];
+    NSPredicate* urlPred = [NSPredicate predicateWithFormat:@"service_url == %@", theURL];
+    [fetchRequest setPredicate:urlPred];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"AppointmentSettings" inManagedObjectContext:appDelegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    
+    NSArray *serviceURLs = [appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if(serviceURLs.count == 0) {
+        AppointmentSettings *appSetting = [NSEntityDescription insertNewObjectForEntityForName:@"AppointmentSettings" inManagedObjectContext:appDelegate.managedObjectContext];
+        [appSetting setService_url:theURL];
+        
+        NSError *error;
+        if (![appDelegate.managedObjectContext save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+    }
+    
+    self.aNewServiceURL = nil;
+    
+    if(loadAllAfterAdd) {
+        [self getAllAppointments];
+    }
 }
 
 - (void)loadAppointmentFromServer:(NSString *)serviceURL {
@@ -90,7 +110,8 @@
                                                           @"medic_id": @"medic_id",
                                                           @"patient_id": @"patient_id",
                                                           @"created_at": @"created_at",
-                                                          @"updated_at": @"updated_at"
+                                                          @"updated_at": @"updated_at",
+                                                          @"title": @"title"
                                                           }];
     
     // Patient
@@ -145,7 +166,9 @@
 	[objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         RKLogInfo(@"Load collection of Articles: %@", mappingResult.array);
         
-        [self.appointments addObject:[mappingResult.array lastObject]];
+        Appointment *a = [mappingResult.array lastObject];
+        [a setService_url:serviceURL];
+        [self.appointments addObject:a];
         
         self.appsLoaded++;
         [self checkLoadingState];
@@ -166,6 +189,12 @@
         self.appsLoaded = 0;
         self.appsLoading = NO;
         
+        NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"begin" ascending:YES selector:@selector(compare:)];
+        NSArray* sortedArray = [self.appointments sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+        
+        [self.appointments removeAllObjects];
+        [self.appointments addObjectsFromArray:sortedArray];
+        
         if([self.delegate respondsToSelector:@selector(appointmentsLoaded)]) {
             [self.delegate appointmentsLoaded];
         }
@@ -176,25 +205,54 @@
     
     if(!self.appsLoading) {
         
+        if(self.aNewServiceURL) {
+            [self addAppointmentWithServiceURL:self.aNewServiceURL loadAllAfterAdd:YES];
+            return;
+        }
+        
+        [self.appointments removeAllObjects];
+        
         self.appsLoading = YES;
         
-        [self.service_urls addObject:@"https://rawgithub.com/DoctorPush/doctor/master/appointment_test.json"];
-        [self.service_urls addObject:@"https://rawgithub.com/DoctorPush/doctor/master/appointment_test.json"];
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         
-        self.appsToLoad = self.service_urls.count;
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"AppointmentSettings" inManagedObjectContext:appDelegate.managedObjectContext];
+        [fetchRequest setEntity:entity];
+        NSError *error;
         
-        for(NSString *service_url in self.service_urls) {
-            [self loadAppointmentFromServer:service_url];
+        NSArray *serviceURLs = [appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        
+        if(serviceURLs.count > 0) {
+            
+            for(AppointmentSettings *a in serviceURLs) {
+                [self loadAppointmentFromServer:a.service_url];
+                [self.service_urls addObject:a.service_url];
+            }
         }
+                              
+        self.appsToLoad = serviceURLs.count;
+    }
+}
+
+- (void) deleteAllAppointmentSettings  {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"AppointmentSettings" inManagedObjectContext:appDelegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error;
+    NSArray *items = [appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    for (NSManagedObject *managedObject in items) {
+    	[appDelegate.managedObjectContext deleteObject:managedObject];
+    	NSLog(@"%@ object deleted",@"AppointmentSettings");
+    }
+    if (![appDelegate.managedObjectContext save:&error]) {
+    	NSLog(@"Error deleting %@ - error:%@",@"AppointmentSettings",error);
     }
     
 }
-
-- (void) deleteAllAppointments  {
-    if(self.appointments) {
-        [self.appointments removeAllObjects];
-    }
-}
-
 
 @end

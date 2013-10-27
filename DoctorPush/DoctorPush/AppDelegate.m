@@ -18,10 +18,20 @@
 @synthesize managedObjectModel = _managedObjectModel;
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-@synthesize user;
+@synthesize user, serviceURLFromAPN;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSDictionary *remoteNotif = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    
+    if(remoteNotif)
+    {
+        self.serviceURLFromAPN = [remoteNotif valueForKey:@"serviceURL"];
+    }
+    
+    //self.serviceURLFromAPN = @"https://rawgithub.com/DoctorPush/doctor/master/appointment_test2.json";
+    
+    
     // setup RestKit and StoreManager
     [self setupObjectManager];
     
@@ -34,16 +44,40 @@
     return YES;
 }
 
+-(void)application:(UIApplication *)app didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    if([app applicationState] == UIApplicationStateInactive)
+    {
+        //If the application state was inactive, this means the user pressed an action button
+        // from a notification.
+        
+        //Handle notification
+        if(userInfo)
+        {
+            self.serviceURLFromAPN = [userInfo valueForKey:@"serviceURL"];
+            [self.user setANewServiceURL:self.serviceURLFromAPN];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshAppointments" object:nil];
+            
+        }
+    }
+}
+
 - (void)setupUser {
     
     NSString *phone = @"+491604421713";
     self.user = [[User alloc] init];
     self.user.phonenumber = phone;
     
-    //[self.user deleteAllAppointments];
-    //[self.user addFakeAppointment];
+    //[self.user deleteAllAppointmentSettings];
     
+    if(self.serviceURLFromAPN) {
+        [self.user setANewServiceURL:self.serviceURLFromAPN];
+        self.serviceURLFromAPN = nil;
+    }
     
+    //[self.user addAppointmentWithServiceURL:@"https://rawgithub.com/DoctorPush/doctor/master/appointment_test.json"];
+    //[self.user addAppointmentWithServiceURL:@"https://rawgithub.com/DoctorPush/doctor/master/appointment_test2.json"];
 }
 
 - (void)setupObjectManager

@@ -12,9 +12,11 @@
 #import "AppointmentCell.h"
 #import "AppointmentDetails.h"
 #import "UCDLocationManager.h"
-
+#import "TimerVC.h"
 
 @interface AppointmentsList : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *appointsTable;
 @property (nonatomic, strong) User *user;
+@property (nonatomic, strong) TimerVC *timerVC;
+- (void)reload;
 @end

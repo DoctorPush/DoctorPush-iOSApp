@@ -28,12 +28,24 @@
     [super viewDidLoad];
 	if(self.appointment) {
         
+        CDCustomLocationManager *locationManager = [CDCustomLocationManager sharedInstance];
+
+        //start off in San Francisco
+        MKCoordinateRegion region;
+        region.center = locationManager.currentLocation.coordinate;
+        region.span.latitudeDelta = 0.2;
+        region.span.longitudeDelta = 0.2;
+
+        [self.mapview setRegion:region animated:YES];
+        
         [self.appointment setDelegate:self];
         [self.appointment getLocationFromAdress];
         
         [self.lblMedicName setText:[self.appointment.medic formatedName]];
         [self.lblAddress setText:self.appointment.medic.address];
         [self.lblDate setText:[self.appointment formatedDateAndTime]];
+        
+        self.title = [NSString stringWithFormat:@"Termin bei %@", [self.appointment.medic formatedName]];
     }
 }
 
@@ -99,7 +111,7 @@
     float minLongitude = MIN(locCurrent.longitude, locApp.longitude);
     float maxLongitude = MAX(locCurrent.longitude, locApp.longitude);
     
-    #define MAP_PADDING 2.5
+    #define MAP_PADDING 1.8
     
     // we'll make sure that our minimum vertical span is about a kilometer
     // there are ~111km to a degree of latitude. regionThatFits will take care of
@@ -107,7 +119,7 @@
     #define MINIMUM_VISIBLE_LATITUDE 0.01
     
     MKCoordinateRegion region;
-    region.center.latitude = (minLatitude + maxLatitude + 1) / 2;
+    region.center.latitude = (minLatitude + maxLatitude + 0.04) / 2;
     region.center.longitude = (minLongitude + maxLongitude) / 2;
     
     region.span.latitudeDelta = (maxLatitude - minLatitude) * MAP_PADDING;
@@ -123,6 +135,10 @@
 }
 
 - (void)locationFound {
+    
+    [self.appointment calcTravelTimeWalking:YES];
+    [self.appointment calcTravelTimeCar:YES];
+    
     [self getDirections];
 }
 

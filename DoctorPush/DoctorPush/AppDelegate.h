@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 #import <CoreTelephony/CoreTelephonyDefines.h>
+#import "AppointmentsList.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -17,5 +18,6 @@
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator ;
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) User *user;
+@property (nonatomic, strong) NSString *serviceURLFromAPN;
 
 @end

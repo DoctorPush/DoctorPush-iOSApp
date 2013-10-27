@@ -20,7 +20,6 @@
 		BDE75D13181C2E7C00E2E9EF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE75D12181C2E7C00E2E9EF /* SystemConfiguration.framework */; };
 		BDE75D18181C2EAF00E2E9EF /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE75D17181C2EAF00E2E9EF /* libxml2.2.dylib */; };
 		BDE75D1F181C33BB00E2E9EF /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9ABAE1181C206700C712CA /* libRestKit.a */; };
-		BDE75D23181C382500E2E9EF /* UCDRegistrationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE75D22181C382500E2E9EF /* UCDRegistrationResponse.m */; };
 		BDE75D2E181C57EB00E2E9EF /* AppointmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE75D2C181C57EB00E2E9EF /* AppointmentCell.m */; };
 		BDE75D2F181C57EB00E2E9EF /* AppointmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE75D2D181C57EB00E2E9EF /* AppointmentCell.xib */; };
 		BDE75D34181C5A8600E2E9EF /* AppointmentDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE75D33181C5A8600E2E9EF /* AppointmentDetails.m */; };
@@ -36,6 +35,9 @@
 		BDE75D62181C8A1600E2E9EF /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BDE75D5F181C8A1600E2E9EF /* ProgressHUD.bundle */; };
 		BDE75D63181C8A1600E2E9EF /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE75D61181C8A1600E2E9EF /* ProgressHUD.m */; };
 		BDE75D67181C9C0000E2E9EF /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE75D66181C9C0000E2E9EF /* FXBlurView.m */; };
+		BDE75D6A181CA0C600E2E9EF /* AppointmentSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE75D69181CA0C600E2E9EF /* AppointmentSettings.m */; };
+		BDE75D6E181CB44D00E2E9EF /* TimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE75D6C181CB44D00E2E9EF /* TimerVC.m */; };
+		BDE75D6F181CB44D00E2E9EF /* TimerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE75D6D181CB44D00E2E9EF /* TimerVC.xib */; };
 		BDE9F6D6181BFBF600CD5DF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6D5181BFBF600CD5DF5 /* Foundation.framework */; };
 		BDE9F6D8181BFBF600CD5DF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6D7181BFBF600CD5DF5 /* CoreGraphics.framework */; };
 		BDE9F6DA181BFBF600CD5DF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE9F6D9181BFBF600CD5DF5 /* UIKit.framework */; };
@@ -108,8 +110,6 @@
 		BD9ABAF8181C2BCC00C712CA /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		BDE75D12181C2E7C00E2E9EF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BDE75D17181C2EAF00E2E9EF /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
-		BDE75D21181C382500E2E9EF /* UCDRegistrationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCDRegistrationResponse.h; sourceTree = "<group>"; };
-		BDE75D22181C382500E2E9EF /* UCDRegistrationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCDRegistrationResponse.m; sourceTree = "<group>"; };
 		BDE75D2B181C57EB00E2E9EF /* AppointmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentCell.h; sourceTree = "<group>"; };
 		BDE75D2C181C57EB00E2E9EF /* AppointmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentCell.m; sourceTree = "<group>"; };
 		BDE75D2D181C57EB00E2E9EF /* AppointmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentCell.xib; sourceTree = "<group>"; };
@@ -138,6 +138,11 @@
 		BDE75D61181C8A1600E2E9EF /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgressHUD.m; path = DoctorPush/Libs/ProgressHUD/ProgressHUD/ProgressHUD.m; sourceTree = "<group>"; };
 		BDE75D65181C9C0000E2E9EF /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXBlurView.h; path = DoctorPush/Libs/FXBlurView/FXBlurView/FXBlurView.h; sourceTree = "<group>"; };
 		BDE75D66181C9C0000E2E9EF /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FXBlurView.m; path = DoctorPush/Libs/FXBlurView/FXBlurView/FXBlurView.m; sourceTree = "<group>"; };
+		BDE75D68181CA0C600E2E9EF /* AppointmentSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppointmentSettings.h; path = ../AppointmentSettings.h; sourceTree = "<group>"; };
+		BDE75D69181CA0C600E2E9EF /* AppointmentSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppointmentSettings.m; path = ../AppointmentSettings.m; sourceTree = "<group>"; };
+		BDE75D6B181CB44D00E2E9EF /* TimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerVC.h; sourceTree = "<group>"; };
+		BDE75D6C181CB44D00E2E9EF /* TimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerVC.m; sourceTree = "<group>"; };
+		BDE75D6D181CB44D00E2E9EF /* TimerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimerVC.xib; sourceTree = "<group>"; };
 		BDE9F6D2181BFBF600CD5DF5 /* DoctorPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoctorPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE9F6D5181BFBF600CD5DF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BDE9F6D7181BFBF600CD5DF5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -208,16 +213,8 @@
 		BD9ABAF3181C247000C712CA /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				BDE75D21181C382500E2E9EF /* UCDRegistrationResponse.h */,
-				BDE75D22181C382500E2E9EF /* UCDRegistrationResponse.m */,
-				BD9ABAF0181C246C00C712CA /* Appointment.h */,
-				BD9ABAF1181C246C00C712CA /* Appointment.m */,
-				BD9ABAED181C246B00C712CA /* User.h */,
-				BD9ABAEE181C246B00C712CA /* User.m */,
-				BDE75D52181C822C00E2E9EF /* Medic.h */,
-				BDE75D53181C822C00E2E9EF /* Medic.m */,
-				BDE75D55181C848900E2E9EF /* Patient.h */,
-				BDE75D56181C848900E2E9EF /* Patient.m */,
+				BDE75D68181CA0C600E2E9EF /* AppointmentSettings.h */,
+				BDE75D69181CA0C600E2E9EF /* AppointmentSettings.m */,
 			);
 			name = ManagedObjects;
 			sourceTree = "<group>";
@@ -326,6 +323,9 @@
 				BDE75D33181C5A8600E2E9EF /* AppointmentDetails.m */,
 				BDE9F6F3181BFBF600CD5DF5 /* Images.xcassets */,
 				BDE9F6DC181BFBF600CD5DF5 /* Supporting Files */,
+				BDE75D6B181CB44D00E2E9EF /* TimerVC.h */,
+				BDE75D6C181CB44D00E2E9EF /* TimerVC.m */,
+				BDE75D6D181CB44D00E2E9EF /* TimerVC.xib */,
 			);
 			path = DoctorPush;
 			sourceTree = "<group>";
@@ -362,6 +362,14 @@
 		BDE9F710181C099B00CD5DF5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BD9ABAF0181C246C00C712CA /* Appointment.h */,
+				BD9ABAF1181C246C00C712CA /* Appointment.m */,
+				BD9ABAED181C246B00C712CA /* User.h */,
+				BD9ABAEE181C246B00C712CA /* User.m */,
+				BDE75D52181C822C00E2E9EF /* Medic.h */,
+				BDE75D53181C822C00E2E9EF /* Medic.m */,
+				BDE75D55181C848900E2E9EF /* Patient.h */,
+				BDE75D56181C848900E2E9EF /* Patient.m */,
 				BDE75D50181C6A7E00E2E9EF /* SynthesizeSingleton.h */,
 				BDE75D48181C611B00E2E9EF /* CDCustomLocationManager.h */,
 				BDE75D49181C611B00E2E9EF /* CDCustomLocationManager.m */,
@@ -497,6 +505,7 @@
 			files = (
 				BDE75D2F181C57EB00E2E9EF /* AppointmentCell.xib in Resources */,
 				BDE9F6EC181BFBF600CD5DF5 /* Main_iPad.storyboard in Resources */,
+				BDE75D6F181CB44D00E2E9EF /* TimerVC.xib in Resources */,
 				BDE75D62181C8A1600E2E9EF /* ProgressHUD.bundle in Resources */,
 				BDE9F6F4181BFBF600CD5DF5 /* Images.xcassets in Resources */,
 				BDE9F6E9181BFBF600CD5DF5 /* Main_iPhone.storyboard in Resources */,
@@ -526,7 +535,7 @@
 				BDE75D45181C60D600E2E9EF /* BSForwardGeocoder.m in Sources */,
 				BDE75D2E181C57EB00E2E9EF /* AppointmentCell.m in Sources */,
 				BD9ABAEC181C217300C712CA /* DoctorPush.xcdatamodeld in Sources */,
-				BDE75D23181C382500E2E9EF /* UCDRegistrationResponse.m in Sources */,
+				BDE75D6A181CA0C600E2E9EF /* AppointmentSettings.m in Sources */,
 				BD9ABAF9181C2BCC00C712CA /* Helper.m in Sources */,
 				BD9ABAF2181C246C00C712CA /* Appointment.m in Sources */,
 				BDE75D63181C8A1600E2E9EF /* ProgressHUD.m in Sources */,
@@ -537,6 +546,7 @@
 				BDE75D34181C5A8600E2E9EF /* AppointmentDetails.m in Sources */,
 				BDE75D46181C60D600E2E9EF /* BSGoogleV3KmlParser.m in Sources */,
 				BDE75D67181C9C0000E2E9EF /* FXBlurView.m in Sources */,
+				BDE75D6E181CB44D00E2E9EF /* TimerVC.m in Sources */,
 				BDE75D37181C603500E2E9EF /* UCDLocationManager.m in Sources */,
 				BDE75D44181C60D600E2E9EF /* BSAddressComponent.m in Sources */,
 			);

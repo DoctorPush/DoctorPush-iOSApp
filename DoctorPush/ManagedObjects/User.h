@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Appointment.h"
+#import "AppointmentSettings.h"
 
 @interface NSObject (UserDelegate)
 - (void)appointmentsLoaded;
@@ -19,11 +20,13 @@
 @property (nonatomic, strong) NSMutableArray *appointments;
 @property (nonatomic, strong) NSMutableArray *service_urls;
 @property (nonatomic, assign) id delegate;
+@property (nonatomic, retain) NSString *aNewServiceURL;
 
 - (void)registerAPNID;
-- (void)addFakeAppointment;
+- (void)addFakeAppointmentService;
 - (void)getAllAppointments;
-- (void)deleteAllAppointments;
+- (void)deleteAllAppointmentSettings;
 - (void)loadAppointmentInital:(NSString *)serviceURL;
+- (void)addAppointmentWithServiceURL:(NSString *)theURL;
 
 @end
