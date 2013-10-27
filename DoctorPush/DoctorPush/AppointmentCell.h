@@ -14,6 +14,6 @@
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
-@property (weak, nonatomic) IBOutlet UILabel *lblDoctor;
+@property (weak, nonatomic) IBOutlet UILabel *lblDoctor, *lblAddress;
 
 @end

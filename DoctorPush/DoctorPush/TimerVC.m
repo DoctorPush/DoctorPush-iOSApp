@@ -38,6 +38,10 @@
     if(self.appointment) {
         [self.appointment setDelegateToTimer:self];
         [self.appointment getLocationFromAdress];
+        
+        if(self.appointment.waiting_persons > 0) {
+            [self.lblPersonsWaiting setText:[NSString stringWithFormat:@"%i Personen warten vor Ihnen", self.appointment.waiting_persons]];
+        }
     }
     
     if(!self.timer) {
@@ -55,9 +59,9 @@
     
     __block CGRect fr = self.loadingView.frame;
     
-    [UIView animateWithDuration:0.25
+    [UIView animateWithDuration:0.20
                      animations:^{
-                         fr.origin.y = 66;
+                         fr.origin.y = 0;
                          self.loadingView.frame = fr;
                      }
                      completion:^(BOOL finished) {
@@ -82,7 +86,7 @@
     
     __block CGRect fr = self.loadingView.frame;
     
-    [UIView animateWithDuration:0.25
+    [UIView animateWithDuration:0.20
                      animations:^{
                          fr.origin.y = 0 - fr.size.height;
                          self.loadingView.frame = fr;
@@ -115,6 +119,11 @@
     UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
     self.selectedIndex = [segmentedControl selectedSegmentIndex];
     
+    if(self.selectedIndex == 0) {
+        self.lblDriveOrWalk.text = @"losfahren";
+    } else {
+        self.lblDriveOrWalk.text = @"losgehen";
+    }
 }
 
 - (void)didReceiveMemoryWarning

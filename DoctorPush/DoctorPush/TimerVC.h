@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblPersonsWaiting;
 @property (nonatomic, strong) Appointment *appointment;
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
+@property (weak, nonatomic) IBOutlet UILabel *lblDriveOrWalk;
 
 - (void)startTimer;
 - (void)reloadTimer;

@@ -46,8 +46,10 @@
 
 -(void)application:(UIApplication *)app didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
+    /*
     if([app applicationState] == UIApplicationStateInactive)
     {
+        */
         //If the application state was inactive, this means the user pressed an action button
         // from a notification.
         
@@ -60,7 +62,7 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshAppointments" object:nil];
             
         }
-    }
+    //}
 }
 
 - (void)setupUser {

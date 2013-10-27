@@ -23,7 +23,7 @@
 @property (nonatomic, retain) NSDate * end;
 @property (nonatomic, strong) NSDate *created_at, *updated_at;
 
-@property (nonatomic, readwrite) int aID, patient_id, medic_id;
+@property (nonatomic, readwrite) int aID, patient_id, medic_id, waiting_persons;
 
 @property (nonatomic, retain) Medic *medic;
 @property (nonatomic, retain) Patient *patient;

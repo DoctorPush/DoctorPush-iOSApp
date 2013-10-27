@@ -19,6 +19,8 @@
 {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
     self.title = @"Meine Termine";
     
     self.timerVC = [[TimerVC alloc] initWithNibName:@"TimerVC" bundle:nil];
@@ -75,23 +77,63 @@
 
 #pragma mark TableView
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-	return [self.user.appointments count];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if(self.user.appointments.count == 0) {
+        return 0;
+    }
+    
+    if(section == 0) {
+        return 1;
+    }
+    
+    int c = [self.user.appointments count];
+    
+    if(c > 1) {
+        c -= 1;
+    }
+    
+    return c;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 0) {
+        return 90;
+    }
+    
 	return 60;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    if(section == 0) {
+        return @"Nächster Termin";
+    }
+    
+    return @"Weitere Termine";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	static NSString *CellIdentifier = @"AppointmentCell";
     
+    NSString *nibName = @"AppointmentCellNext";
+    int row = 0;
+    
+    if(indexPath.section == 1) {
+        nibName = @"AppointmentCell";
+        row = indexPath.row + 1;
+    }
+    
     AppointmentCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:nil options:nil];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil];
         for(id currentObject in topLevelObjects) {
             if([currentObject isKindOfClass:[UITableViewCell class]]) {
                 cell = (AppointmentCell *) currentObject;
@@ -102,9 +144,13 @@
         topLevelObjects = nil;
     }
     
-    Appointment *a = [self.user.appointments objectAtIndex:[indexPath row]];
+    Appointment *a = [self.user.appointments objectAtIndex:row];
     cell.lblDoctor.text = a.title;
     cell.lblDate.text = [a formatedDateAndTime];
+    
+    if(indexPath.section == 0) {
+        cell.lblAddress.text = a.medic.address;
+    }
     
     return cell;
 }

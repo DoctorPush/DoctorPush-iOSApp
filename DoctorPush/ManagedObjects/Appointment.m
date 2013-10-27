@@ -13,7 +13,7 @@
 @synthesize begin, end, title;
 @synthesize service_url;
 @synthesize created_at, updated_at;
-@synthesize medic, patient;
+@synthesize medic, patient, waiting_persons;
 
 @synthesize formatedDate, locationManager, delegate, location, delegateToTimer;
 

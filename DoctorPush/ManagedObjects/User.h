@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Appointment.h"
+#import "HistoryParameters.h"
 #import "AppointmentSettings.h"
 
 @interface NSObject (UserDelegate)

@@ -8,6 +8,7 @@
 
 #import "User.h"
 #import "AppDelegate.h"
+#import "HistoryItem.h"
 
 @interface User ()
 @property (nonatomic, readwrite) int appsToLoad, appsLoaded;
@@ -111,7 +112,8 @@
                                                           @"patient_id": @"patient_id",
                                                           @"created_at": @"created_at",
                                                           @"updated_at": @"updated_at",
-                                                          @"title": @"title"
+                                                          @"title": @"title",
+                                                          @"waiting_persons": @"waiting_persons"
                                                           }];
     
     // Patient
@@ -153,6 +155,41 @@
 	[appointmentMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"medic"
                                                                                        toKeyPath:@"medic"
                                                                                      withMapping:medicsMapping]];
+    
+    // History
+	RKObjectMapping *historyMapping = [RKObjectMapping mappingForClass:[HistoryItem class]];
+    
+	[historyMapping addAttributeMappingsFromDictionary:@{
+                                                        @"recipient_id": @"recipient_id",
+                                                        @"recipient_type": @"recipient_type",
+                                                        @"trackable_type": @"trackable_type",
+                                                        @"owner_type": @"owner_type",
+                                                        @"key":@"key",
+                                                        @"hid":@"id",
+                                                        @"owner_id":@"owner_id",
+                                                        @"trackable_id":@"trackable_id",
+                                                        @"created_at":@"created_at",
+                                                        @"updated_at":@"updated_at"
+                                                        }];
+	
+	// Define the relationship mapping
+	[appointmentMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"history"
+                                                                                       toKeyPath:@"history"
+                                                                                     withMapping:historyMapping]];
+    
+    // Parameters
+	RKObjectMapping *historyParametersMapping = [RKObjectMapping mappingForClass:[HistoryParameters class]];
+    
+	[historyParametersMapping addAttributeMappingsFromDictionary:@{
+                                                         @"start": @"start",
+                                                         @"start_was": @"start_was",
+                                                         @"end": @"end",
+                                                         @"end_was": @"end_was",
+                                                         @"message":@"message"
+                                                         }];
+	
+	// Define the relationship mapping
+	[historyMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"parameters" toKeyPath:@"parameters" withMapping:historyParametersMapping]];
     
     // do request stuff
     

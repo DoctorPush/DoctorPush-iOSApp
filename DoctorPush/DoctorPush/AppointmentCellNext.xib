@@ -8,28 +8,35 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clearsContextBeforeDrawing="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="AppointmentCell" rowHeight="66" id="3" customClass="AppointmentCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3" id="xy1-co-r4b">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="45">
-                        <rect key="frame" x="15" y="8" width="280" height="24"/>
+                        <rect key="frame" x="15" y="8" width="272" height="24"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SGo-3c-tMP">
-                        <rect key="frame" x="15" y="30" width="280" height="24"/>
+                        <rect key="frame" x="15" y="33" width="272" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                        <color key="textColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sUp-fk-99K">
+                        <rect key="frame" x="15" y="57" width="290" height="24"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                         <color key="textColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="0.27500000596046448" green="0.078000001609325409" blue="0.20000000298023224" alpha="0.0" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.0017301004995648921" green="0.292547770456412" blue="0.76472815688775508" alpha="0.059999999999999998" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
             <connections>

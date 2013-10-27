@@ -33,8 +33,8 @@
         //start off in San Francisco
         MKCoordinateRegion region;
         region.center = locationManager.currentLocation.coordinate;
-        region.span.latitudeDelta = 0.2;
-        region.span.longitudeDelta = 0.2;
+        region.span.latitudeDelta = 0.1;
+        region.span.longitudeDelta = 0.1;
 
         [self.mapview setRegion:region animated:YES];
         
