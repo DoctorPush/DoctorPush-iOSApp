@@ -78,7 +78,7 @@
         traveltime = self.appointment.traveltimeWalking;
     }
     
-    double timeUntilAppointment = [self.appointment.begin timeIntervalSinceDate:[NSDate date]];
+    double timeUntilAppointment = [self.appointment.begin timeIntervalSinceDate:[NSDate date]] - 3600;
     double timeWithoutTraveltime = timeUntilAppointment - traveltime;
     
     if(timeWithoutTraveltime < 0) {
