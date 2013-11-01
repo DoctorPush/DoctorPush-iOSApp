@@ -1,9 +1,9 @@
 //
 //  PodcastsTableCell.m
-//  DaimleriPhoneApp
+//  DoctorPush
 //
 //  Created by René Kann on 19.03.10.
-//  Copyright 2010 UCDplus GmbH. All rights reserved.
+//  Copyright (c) 2013 René (Privat). All rights reserved.
 //
 // UPDATE in der .m Datei
 

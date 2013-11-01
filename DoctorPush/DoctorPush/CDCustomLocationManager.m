@@ -1,9 +1,9 @@
 //
 //  CDCustomLocationManager.m
-//  DaimlerHRJobagent
+//  DoctorPush
 //
 //  Created by René Kann on 05.04.12.
-//  Copyright (c) 2012 UCDplus GmbH. All rights reserved.
+//  Copyright (c) 2013 René (Privat). All rights reserved.
 //
 
 #import "CDCustomLocationManager.h"

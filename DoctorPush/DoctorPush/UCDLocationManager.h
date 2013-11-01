@@ -1,9 +1,9 @@
 //
 //  UCDLocationManager.h
-//  DaimlerHRJobagent
+//  DoctorPush
 //
 //  Created by René Kann on 22.12.11.
-//  Copyright (c) 2011 UCDplus GmbH - www.ucdplus.com. All rights reserved.
+//  Copyright (c) 2013 René (Privat) . All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
